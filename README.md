@@ -21,7 +21,13 @@ Installation
 
    git clone https://github.com/XingyuLiao/SRC.git
 
-Example Run
+Getting Started
 -----------
+python src_entry.py -f <fasta_path (absolute path)> -o <output_dir (absolute path)> 
+
+ensure you use absolute path for fasta path and output directory.
 
 
+we provide a demo to run and ensure your installation.
+
+python src_entry.py -f /home/.../SRC/demo/RepeatLib_ant.fa -o /home/.../SRC/demo/
