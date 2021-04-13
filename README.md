@@ -14,7 +14,7 @@ Installation
     Available at http://www.perl.org/get.html. Developed and tested
     with version 5.8.8.
 
-  RepeatMasker & Libraries
+  RepeatMasker & Libraries - 
     Developed and tested with open-4.0.9. The program is available at 
     http://www.repeatmasker.org/RMDownload.html and is distributed with
     Dfam - an open database of transposable element families.
@@ -23,7 +23,7 @@ Installation
     http://www.repeatmasker.org/RMBlast.html.
     We recommend using 2.9.0-p2 or higher.
     
-  Hadoop & Spark
+  Hadoop & Spark - 
     Configure a Hadoop and Spark platform. Hadoop is available at 
     https://archive.apache.org/dist/hadoop/common/ and Spark can be found at 
     https://spark.apache.org/downloads.html. 
