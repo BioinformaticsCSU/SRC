@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
     # 4. write back to ParamConfig
     new_param = {}
-    new_param['hadoop_home'] = hadoop_path
+    new_param['hadoop_home'] = hadoop_home
     new_param['hdfs_dir'] = hdfs_dir
 
     new_param['spark_home'] = spark_home
@@ -139,3 +139,5 @@ if __name__ == '__main__':
 
     with open(RepModelConfig_path, 'w') as f_w:
         f_w.writelines(RepModelConfig_lines)
+
+    print("Congratulation! finish all configuration.")
