@@ -21,3 +21,7 @@ Installation
 
    git clone https://github.com/XingyuLiao/SRC.git
 
+Example Run
+-----------
+
+
