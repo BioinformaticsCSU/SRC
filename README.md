@@ -40,7 +40,7 @@ Automatic:
 + Run the "configure" script interactively with prompts
          for each setting:
          
-         python ./configure
+         python configure.py
 
 By Hand:
 
