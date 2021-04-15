@@ -47,7 +47,6 @@ By Hand:
 + Edit the configuration file "config/ParamConfig.json" and "RepeatClassifier-2.0.1/RepModelConfig.pm"
 
 
-
 Getting Started
 -----------
 **Command**
