@@ -41,6 +41,7 @@ Automatic:
          for each setting:
 	 
 	 cd $SRC_HOME
+
          python configure.py
 
 By Hand:
