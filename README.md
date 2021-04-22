@@ -39,7 +39,8 @@ Automatic:
 
 + Run the "configure" script interactively with prompts
          for each setting:
-         
+	 
+	 cd $SRC_HOME
          python configure.py
 
 By Hand:
