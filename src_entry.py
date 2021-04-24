@@ -159,6 +159,12 @@ if __name__ == '__main__':
 
     fasta_path = args.f
     output_dir = args.o
+    
+    if not os.path.isabs(fasta_path):
+        fasta_path = os.path.abspath(fasta_path)
+
+    if not os.path.isabs(output_dir):
+        output_dir = os.path.abspath(output_dir)
 
     file_removed = []
     # program_path = '/public/home/hpc194701009/repeat_detect_tools/RepeatModeler-2.0.1/RepeatClassifier'
@@ -192,6 +198,9 @@ if __name__ == '__main__':
     #fasta_path, new2origin_header_map = transform2SingleLine_direct(tmp_fasta_path, contigs, int(total_executor_cores))
     fasta_path, new2origin_header_map = transform2SingleLine(tmp_fasta_path, contigs, int(total_executor_cores))
     (dir, filename) = os.path.split(fasta_path)
+    
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     new2origin_header_map_path = output_dir + '/' + filename + '.header_map.json'
     with codecs.open(new2origin_header_map_path, 'w', 'utf-8') as outf:
         json.dump(new2origin_header_map, outf, ensure_ascii=False)

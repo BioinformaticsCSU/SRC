@@ -54,9 +54,7 @@ Getting Started
 -----------
 **Command**
 
-Please ensure you use absolute path for fasta path and output directory.
-
-`python src_entry.py -f <fasta_path (absolute path)> -o <output_dir (absolute path)> `
+`python src_entry.py -f <fasta_path> -o <output_dir> `
 
 
 
@@ -64,4 +62,6 @@ Please ensure you use absolute path for fasta path and output directory.
 
 we provide a demo to run and ensure your installation.
 
-`python src_entry.py -f /home/.../SRC/demo/RepeatLib_ant.fa -o /home/.../SRC/demo/`
+    cd $SRC_HOME
+
+    python src_entry.py -f demo/RepeatLib_ant.fa -o demo/

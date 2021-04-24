@@ -29,7 +29,7 @@ if __name__ == '__main__':
     while not valid_path(hadoop_path):
         hadoop_home = raw_input("can not detect Hadoop program: " + hadoop_path + ".\n Please re-enter Hadoop Home: ")
         hadoop_path = hadoop_home + '/bin/hadoop'
-    hdfs_dir = raw_input("Please enter HDFS work directory(default, hdfs://master_ip:9000/data/repeat_detection/): ")
+    hdfs_dir = raw_input("Please enter HDFS work directory(e.g., hdfs://master_ip:9000/data/repeat_detection/): ")
     hdfs_pattern = re.compile(r'^hdfs://.*:\d+/+')
     m = hdfs_pattern.match(hdfs_dir)
     if m is None:
@@ -42,10 +42,10 @@ if __name__ == '__main__':
         spark_home = raw_input("can not detect Spark program: " + spark_path + ".\n Please re-enter Spark Home: ")
         spark_path = spark_home + '/bin/spark-submit'
 
-    master = raw_input("Please enter Spark master address(default, spark://master_ip:7077): ")
-    driver_memory = raw_input("Please enter Spark driver memory size(default, 10g): ")
-    total_executor_cores = raw_input("Please enter Spark total executor cores(default, 240): ")
-    executor_memory = raw_input("Please enter Spark executor memory size(default, 10g): ")
+    master = raw_input("Please enter Spark master address(e.g., spark://master_ip:7077): ")
+    driver_memory = raw_input("Please enter Spark driver memory size(e.g., 10g): ")
+    total_executor_cores = raw_input("Please enter Spark total executor cores(e.g., 240): ")
+    executor_memory = raw_input("Please enter Spark executor memory size(e.g., 10g): ")
 
     master_pattern = re.compile(r'^spark://.*:\d+$')
     m = master_pattern.match(master)
@@ -96,11 +96,11 @@ if __name__ == '__main__':
         repeatmasker_path = repeatmasker_home + '/RepeatMasker'
 
     rmblast_home = raw_input("Please enter RMBLAST Home: ")
-    rmblast_path = rmblast_home + '/rmblastn'
+    rmblast_path = rmblast_home + '/bin/rmblastn'
     while not valid_path(rmblast_path):
         rmblast_home = raw_input(
             "can not detect RMBLAST program: " + rmblast_path + ".\n Please re-enter RMBLAST Home: ")
-        rmblast_path = rmblast_home + '/rmblastn'
+        rmblast_path = rmblast_home + '/bin/rmblastn'
 
     # 6. modify RepModelConfig.pm in RepeatClassifier directory
     RepModelConfig_path = os.getcwd() + "/RepeatClassifier-2.0.1/RepModelConfig.pm"
@@ -131,7 +131,7 @@ if __name__ == '__main__':
                 else:
                     if line.split('=>')[0].strip() == "'value'":
                         # modify
-                        new_line = line.split('=>')[0] + "=> '" + rmblast_home + "'\n"
+                        new_line = line.split('=>')[0] + "=> '" + rmblast_home + "/bin'\n"
                         modified_rmblast = True
                         line = new_line
 

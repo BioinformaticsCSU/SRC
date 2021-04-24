@@ -187,7 +187,7 @@ BEGIN {
                           'environment_override' => 'TRF_PRGM',
                           'param_type' => 'program',
                           'required' => 1,
-                          'value' => '/public/home/hpc194701009/repeat_detect_tools/trf409.linux64' 
+                          'value' => '' 
                           #'value' => '/public/home/hpc194701009/repeat_detect_tools/trf409.linux64'
                         }
         };
