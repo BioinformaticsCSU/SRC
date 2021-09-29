@@ -3,6 +3,7 @@ import codecs
 import json
 import os
 import time
+import shutil
 
 def read_fasta(fasta_path):
     contigs = {}
@@ -227,7 +228,8 @@ if __name__ == '__main__':
     executor_memory = param['executor_memory']
     # program param
     classifier_program = os.getcwd() + "/src_main.py"
-    program_path = param['repeatclassifier_path']
+    #program_path = param['repeatclassifier_path']
+    program_path = os.getcwd() + '/RepeatClassifier-2.0.1/RepeatClassifier'
 
     spark_command = spark_home + '/bin/spark-submit --master ' + master + ' --driver-memory ' + driver_memory \
                     + ' --total-executor-cores ' + total_executor_cores + ' --executor-memory ' + executor_memory \
@@ -239,6 +241,11 @@ if __name__ == '__main__':
     dtime = endtime - starttime
     print("total_executor_cores: %s, Spark classifier running time: %.8s s" % (total_executor_cores, dtime))
     #print("species: %s, total_executor_cores: %s, Spark classifier running time: %.8s s" % (specie, total_executor_cores, dtime))
+
+    tmp_dirs = []
+    for i in range(int(total_executor_cores)):
+        tmp_dir = output_dir + '/' + str(i)
+        shutil.rmtree(tmp_dir, ignore_errors=True)
 
     for f in file_removed:
         os.remove(f)

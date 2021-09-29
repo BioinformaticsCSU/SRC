@@ -15,7 +15,6 @@ def valid_path(path):
 
 
 if __name__ == '__main__':
-    default_hdfs_dir = 'hdfs://node1002:9000/data/repeat_detection/'
     default_master = 'spark://master_ip:7077'
     default_driver_memory = '10g'
     default_total_executor_cores = '240'
@@ -29,11 +28,11 @@ if __name__ == '__main__':
     while not valid_path(hadoop_path):
         hadoop_home = raw_input("can not detect Hadoop program: " + hadoop_path + ".\n Please re-enter Hadoop Home: ")
         hadoop_path = hadoop_home + '/bin/hadoop'
-    hdfs_dir = raw_input("Please enter HDFS work directory(e.g., hdfs://master_ip:9000/data/repeat_detection/): ")
-    hdfs_pattern = re.compile(r'^hdfs://.*:\d+/+')
-    m = hdfs_pattern.match(hdfs_dir)
-    if m is None:
-        hdfs_dir = default_hdfs_dir
+   # hdfs_dir = raw_input("Please enter HDFS work directory(e.g., hdfs://master_ip:9000/data/repeat_detection/): ")
+   # hdfs_pattern = re.compile(r'^hdfs://.*:\d+/+')
+   # m = hdfs_pattern.match(hdfs_dir)
+   # if m is None:
+   #     hdfs_dir = default_hdfs_dir
 
     # 2.Spark Home
     spark_home = raw_input("Please enter Spark Home: ")
@@ -74,7 +73,6 @@ if __name__ == '__main__':
     # 4. write back to ParamConfig
     new_param = {}
     new_param['hadoop_home'] = hadoop_home
-    new_param['hdfs_dir'] = hdfs_dir
 
     new_param['spark_home'] = spark_home
     new_param['master'] = master
