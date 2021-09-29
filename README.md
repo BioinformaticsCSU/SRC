@@ -75,3 +75,4 @@ we provide a demo to run and ensure your installation.
 
     python src_entry.py -f demo/RepeatLib_ant.fa -o demo/
 
+If the program runs successfully, a new file named RepeatLib_ant.fa.tmp.spark.classified will be generated in the demo directory, which is the output file of the program.
